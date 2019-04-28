@@ -28,7 +28,7 @@ VALUES (default, 'Study SQL', 'Complete this exercise', now(), now(), NULL);
 INSERT INTO tasks (title, description)
 VALUES ('Study PostgreSQL', 'Read all the documentation');
 
-select *
+SELECT title
 FROM tasks
 WHERE completed_at is NULL;
 
@@ -36,8 +36,8 @@ UPDATE tasks
 SET completed_at = now()
 WHERE title = 'Study SQL';
 
-select title, description
-from tasks
+SELECT title, description
+FROM tasks
 WHERE completed_at IS NULL;
 
 SELECT *
@@ -57,7 +57,7 @@ SELECT title
 FROM tasks
 WHERE title LIKE '%mistake%';
 
-delete
+DELETE
 FROM tasks
 WHERE title LIKE '%mistake%';
 
