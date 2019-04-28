@@ -1,6 +1,8 @@
+drop table if exists tasks;
+
 CREATE TABLE tasks (
   id  SERIAL PRIMARY KEY,
-  tite  character varying (255) NOT NULL,
+  title  character varying (255) NOT NULL,
   description text NULL,
   created_at timestamp without time zone NOT null default now(),
   updated_at timestamp without time zone NULL,
@@ -21,7 +23,7 @@ ALTER COLUMN updated_at
 SET default now();
 
 INSERT INTO tasks (id, title, description, created_at, updated_at, completed_at)
-VALUES (default value, 'Study SQL', 'Complete this exercise', now(), now(), NULL);
+VALUES (default, 'Study SQL', 'Complete this exercise', now(), now(), NULL);
 
 INSERT INTO tasks (title, description)
 VALUES ('Study PostgreSQL', 'Read all the documentation');
