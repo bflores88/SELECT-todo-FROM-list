@@ -16,13 +16,9 @@ ADD COLUMN completed_at timestamp NULL default NULL;
 
 ALTER TABLE tasks
 ALTER COLUMN updated_at
-SET NOT NULL;
+SET NOT NULL and SET default now();
 
-ALTER TABLE tasks
-ALTER COLUMN updated_at
-SET default now();
-
-INSERT INTO tasks (id, title, description, created_at, updated_at, completed_at)
+INSERT INTO tasks
 VALUES (default, 'Study SQL', 'Complete this exercise', now(), now(), NULL);
 
 INSERT INTO tasks (title, description)
@@ -54,6 +50,14 @@ INSERT INTO tasks (title, description)
 VALUES ('third mistake', 'another test entry');
 
 SELECT title
+FROM tasks
+WHERE title LIKE '%mistake%';
+
+DELETE
+FROM tasks
+WHERE title = 'mistake 1';
+
+SELECT title, description
 FROM tasks
 WHERE title LIKE '%mistake%';
 
