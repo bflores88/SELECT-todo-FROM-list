@@ -16,7 +16,11 @@ ADD COLUMN completed_at timestamp NULL default NULL;
 
 ALTER TABLE tasks
 ALTER COLUMN updated_at
-SET NOT NULL and SET default now();
+SET NOT NULL;
+
+ALTER TABLE tasks
+ALTER COLUMN updated_at
+SET default now();
 
 INSERT INTO tasks
 VALUES (default, 'Study SQL', 'Complete this exercise', now(), now(), NULL);
